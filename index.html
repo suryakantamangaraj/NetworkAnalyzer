@@ -7,7 +7,14 @@
     <link rel="stylesheet" href="/static/style.css">
 </head>
 <body>
-    {% include 'header.html' %}
+    <div id="header">
+    <div class="left-header">
+        <a href="https://suryaraj.me/NetworkAnalyzer/">Surya NA</a>
+    </div>
+    <div class="right-header">
+        <a href="https://suryaraj.me" target="_blank">suryaraj.me</a>
+    </div>
+</div>
     <div class="container">
         <h1 class="center">Network Analyzer</h1>
         <form method="post" enctype="multipart/form-data">
@@ -40,25 +47,17 @@
             <h2 class="center">Output</h2>
             <div class="result">
                 <h3>Result</h3>
-                {% if result %}
-                    <p>Min Value: {{ result.min }}</p>
-                    <p>Max Value: {{ result.max }}</p>
-                    <p>Avg Value: {{ result.avg }}</p>
-                    <button onclick="document.getElementById('all-values').style.display='block'">View All Values</button>
-                    <div id="all-values" style="display:none;">
-                        <p>All Values: {{ result.values }}</p>
-                    </div>
-                {% endif %}
+                
             </div>
             <div class="graph">
                 <h3>Waveform/Graph</h3>
-                {% if graph %}
-                    <img src="data:image/png;base64,{{ graph }}" alt="Graph">
-                {% endif %}
+                
             </div>
         </div>
     </div>
-    {% include 'footer.html' %}
+    <div id="footer">
+    ©2024 - <script>document.write(new Date().getFullYear())</script> Surya Raj | Surya NA • Powered with 🔧 by Surya
+</div>
 </body>
 </html>
  
