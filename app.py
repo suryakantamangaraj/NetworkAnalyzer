@@ -10,6 +10,7 @@ import skrf as rf
 
 app = Flask(__name__)
 # add this for freezer
+freezer = Freezer(app)
 
 
 def parse_s2p(file):
@@ -28,7 +29,7 @@ def parse_s2p(file):
     })
     return data
 
-
+# Flask app routes and configurations
 #@app.route('/', methods=['GET', 'POST'])
 @app.route('/')
 def index():
