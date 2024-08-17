@@ -1,7 +1,6 @@
 # static site generator like Frozen-Flask 
 from flask_frozen import Freezer
-#from flask import Flask, render_template, request
-from flask import Flask, render_template
+from flask import Flask, render_template, request
 import pandas as pd
 import matplotlib.pyplot as plt
 import io
@@ -30,8 +29,7 @@ def parse_s2p(file):
     return data
 
 # Flask app routes and configurations
-#@app.route('/', methods=['GET', 'POST'])
-@app.route('/')
+@app.route('/', methods=['GET', 'POST'])
 def index():
     result = None
     graph = None
