@@ -43,6 +43,10 @@ This project is a Flask application for analyzing S-parameter files (.s2p). It a
 
 This project can be deployed using GitHub Actions and GitHub Pages. The workflow file is located in `.github/workflows/deploy.yml`.
 
+### GitHub Actions Workflow
+
+The GitHub Actions workflow is configured to deploy the site to GitHub Pages. Ensure you have a personal access token (PAT) with the necessary permissions added to your repository secrets as `PERSONAL_TOKEN`.
+
 ## Contributing
 
 Contributions are welcome! Please open an issue or submit a pull request.
