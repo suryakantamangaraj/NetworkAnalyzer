@@ -1,3 +1,4 @@
+# static site generator like Frozen-Flask 
 from flask_frozen import Freezer
 from flask import Flask, render_template, request
 import pandas as pd
@@ -7,11 +8,16 @@ import base64
 import skrf as rf
 
 app = Flask(__name__)
+# add this for freezer
 freezer = Freezer(app)
 
+
 def parse_s2p(file):
+    # Save the uploaded file to a temporary location
     temp_file_path = '/tmp/temp_s2p_file.s2p'
     file.save(temp_file_path)
+    
+    # Parse the s2p file using scikit-rf and return a DataFrame
     network = rf.Network(temp_file_path)
     data = pd.DataFrame({
         'Frequency': network.f,
@@ -22,6 +28,7 @@ def parse_s2p(file):
     })
     return data
 
+# Flask app routes and configurations
 @app.route('/', methods=['GET', 'POST'])
 def index():
     result = None
