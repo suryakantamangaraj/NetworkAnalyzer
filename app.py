@@ -1,4 +1,7 @@
-from flask import Flask, render_template, request
+# static site generator like Frozen-Flask 
+from flask_frozen import Freezer
+#from flask import Flask, render_template, request
+from flask import Flask, render_template
 import pandas as pd
 import matplotlib.pyplot as plt
 import io
@@ -6,6 +9,8 @@ import base64
 import skrf as rf
 
 app = Flask(__name__)
+# add this for freezer
+
 
 def parse_s2p(file):
     # Save the uploaded file to a temporary location
@@ -24,7 +29,8 @@ def parse_s2p(file):
     return data
 
 
-@app.route('/', methods=['GET', 'POST'])
+#@app.route('/', methods=['GET', 'POST'])
+@app.route('/')
 def index():
     result = None
     graph = None
